@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "411218438705",
+    "project_id": "lemonade-39ec6",
+    "storage_bucket": "lemonade-39ec6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411218438705:android:1da66b3fab64eb494d8310",
+        "android_client_info": {
+          "package_name": "com.example.lemonade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411218438705-ffp4376mkh4agnu60b3vddkg7eeg5vbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lemonade",
+            "certificate_hash": "8d88c466921533b9916c3badf394d86f4a668333"
+          }
+        },
+        {
+          "client_id": "411218438705-ngs5jrniue94mkc9007vja4d3s0q2tuo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqWH1o7JpbJN13CP7QsifX5A6ZxlNpJfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411218438705-ngs5jrniue94mkc9007vja4d3s0q2tuo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

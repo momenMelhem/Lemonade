@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Lemonade</string>
+    <string name="lemon_tree">Tap the lemon tree to select a lemon</string>
+    <string name="squeeze">Keep tapping the lemon to squeeze it</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="watermelon">Watermelon</string>
+    <string name="orange">Orange</string>
+    <string name="mango">Mango</string>
+    <string name="drink">Tap the lemonade to drink it</string>
+    <string name="empty">Tap the empty glass to start again</string>
+    <string name="title_activity_how_to_use">HowToUseActivity</string>
+    <string name="how_to_use">Our app has two section:</string>
+    <string name="first_section">First one you can you change the photo by taping</string>
+    <string name="second_section">Second one you can change the photo by swiping horizontally</string>
+    <string name="btn_next">next</string>
+    <string name="lemon_Juice">Lemon Juice</string>
+    <string name="swipe_right">Swipe Right and Tap the Image</string>
+    <string name="empty_string"></string>
+    <string name="strawberry_juice">Strawberry Juice</string>
+    <string name="watermelon_juice">Watermelon Juice</string>
+    <string name="orange_juice">Orange Juice</string>
+    <string name="mango_juice">Mango Juice</string>
+    <string name="welcome_first_time">Welcome For The First  Time !!</string>
+    <string name="login">Login</string>
+    <string name="register_here">"You Don't Have Account? Register Here "</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="web_client_id">411218438705-ngs5jrniue94mkc9007vja4d3s0q2tuo.apps.googleusercontent.com</string>
+
+
+</resources>
