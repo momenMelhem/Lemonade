@@ -28,6 +28,47 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="web_client_id">411218438705-ngs5jrniue94mkc9007vja4d3s0q2tuo.apps.googleusercontent.com</string>
+    <string name="free_delivery">Free Delivery</string>
+    <string name="thirty_percent">30% OFF</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="abu_saleh">Abu Saleh</string>
+    <string name="hot">Hot</string>
+    <string name="all_shops">All Shops</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="free">Free</string>
+    <string name="sale">Sales</string>
+    <string name="hot_drinks">Hot Drinks</string>
+    <string name="sign_out">"Sign Out "</string>
+    <string name="user_name">User Name</string>
+    <string name="enter_new_user_name">Enter New User Name</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_user_name">Edit User Name</string>
+    <string name="sign_out_dialog">sure you want to sign out?</string>
+    <string name="aseer_time">Aseer Time</string>
+    <string name="toot_louz"><![CDATA[Toot & Louz]]></string>
+    <string name="avocado">Avocado</string>
+    <string name="shake_away">ShakeAway</string>
+    <string name="batateekh">Batateekh</string>
+    <string name="az_berry">AzBerry</string>
+    <string name="juice_club">Jucie Club</string>
+    <string name="abu_wadee">Abu Wadee</string>
+    <string name="alkabten">The Captain</string>
+    <string name="fruie_salad">Fruit Salad</string>
+    <string name="sameera">Sameera\n</string>
+    <string name="sameera_description">Fruit Cocktail</string>
+    <string name="baheera">Baheera</string>
+    <string name="baheera_desription">with honey and nuts</string>
+    <string name="orioDesription">Orio milk shake</string>
+    <string name="lootus_description">Lotus milk shake</string>
+    <string name="orio">Orio</string>
+    <string name="lots">Lotus</string>
+    <string name="hot_chocolate">Hot Chocolate</string>
+    <string name="hot_chocolate_description">with cocoa and milk</string>
+    <string name="macciato">Macchiato</string>
+    <string name="macciato_description">Caramel macchiato</string>
+    <string name="sahlab">Sahlab</string>
+    <string name="sahlab_description">with pistachio</string>
 
 
 </resources>

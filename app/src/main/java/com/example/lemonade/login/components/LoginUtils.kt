@@ -14,14 +14,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.lemonade.R
+import com.example.lemonade.login.view.loginButton
 import com.example.lemonade.login.viewModel.LoginViewModel
+import com.example.lemonade.utils.AppScreens
+import kotlinx.coroutines.CoroutineScope
 
 @Composable
-fun LoginButton(viewModel: LoginViewModel){
+fun LoginButton(viewModel: LoginViewModel,navController: NavHostController, coroutineScope: CoroutineScope){
     val context = LocalContext.current
 
     Button(
-        onClick = { viewModel.loginButton(context) },
+        onClick = { loginButton(context,navController,viewModel, coroutineScope) },
         modifier = Modifier
             .padding(4.dp)
     ) {
@@ -33,9 +36,9 @@ fun LoginButton(viewModel: LoginViewModel){
     }
 }
 @Composable
-fun HaveAccountText(viewModel: LoginViewModel,navController:NavHostController){
+fun HaveAccountText(navController:NavHostController){
 
-    TextButton(onClick = {viewModel.loginText(navController)}){
+    TextButton(onClick = {navController.navigate(AppScreens.Register.rout)}){
         Text (
             text = stringResource(R.string.register_here),
              )

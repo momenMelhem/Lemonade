@@ -8,43 +8,44 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.lemonade.R
 import com.example.lemonade.login.viewModel.LoginViewModel
 @Composable
- fun EmailTextField(viewModel: LoginViewModel){
-
+ fun TextField(text:String, viewModel: LoginViewModel){
     OutlinedTextField(
-    value = viewModel.email.value,
-    onValueChange = {viewModel.email.value=it},
-    label = { Text(text = stringResource(R.string.email))},
+    value = when (text){
+        "Password" -> viewModel.password.value
+        else -> {viewModel.email.value}
+    },
+    onValueChange = {
+        when (text){
+            "Password" -> viewModel.password.value=it
+            else -> {viewModel.email.value=it}
+        }
+                    },
+    label = { Text(text = text) },
     singleLine = true,
     textStyle = TextStyle(fontWeight = FontWeight.Bold),
+    visualTransformation =
+    if (text == "Password" && viewModel.passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation(),
+    trailingIcon = {
+        if(text == "Password") {
+            IconButton(onClick = {
+                viewModel.passwordIcon()
+                //write it here direct!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            }) {
+                Icon(
+                    painter = painterResource(id = viewModel.iconState.intValue),
+                    contentDescription = ""
+                )
+            }
+        }
+    },
     modifier = Modifier
         .padding(16.dp)
 )
  }
-@Composable
-fun PasswordTextField(viewModel : LoginViewModel){
-    OutlinedTextField(
-        value = viewModel.password.value,
-        onValueChange = {viewModel.password.value=it},
-        label = {Text(text = "Password")},
-        singleLine = true,
-        visualTransformation =  if (viewModel.passwordVisibility.value) VisualTransformation.None else PasswordVisualTransformation(),
-        trailingIcon = {
-                       IconButton(onClick = {
-                           viewModel.passwordIcon()
-                       }){
-                       Icon(painter = painterResource(id = viewModel.iconState.intValue), contentDescription ="" )
-                       }
-        },
-        modifier = Modifier
-            .padding(16.dp)
-    )
-}

@@ -3,6 +3,9 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
+    id("kotlin-parcelize")
+    id ("org.jetbrains.kotlin.plugin.serialization")
+
 }
 
 android {
@@ -19,6 +22,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
@@ -54,6 +58,8 @@ android {
 dependencies {
     //room
     implementation("androidx.room:room-runtime:2.5.2")
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     annotationProcessor("androidx.room:room-compiler:2.5.2")
     ksp("androidx.room:room-compiler:2.5.2")
     implementation("androidx.room:room-paging:2.5.2")
@@ -64,13 +70,19 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.4.1"))
     implementation("com.google.firebase:firebase-auth-ktx")
 
+    implementation ("com.google.code.gson:gson:2.10.1")
+    //animation
+    implementation ("com.airbnb.android:lottie-compose:6.1.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
+    //serialization
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation ("androidx.compose.material:material:1.5.4")
-    implementation ("androidx.navigation:navigation-compose:2.7.4")
+    implementation ("androidx.navigation:navigation-compose:2.7.5")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")

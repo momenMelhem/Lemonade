@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -16,6 +18,7 @@ import com.example.lemonade.registration.view.RegisterText
 import com.example.lemonade.registration.viewModel.RegisterViewModel
 import com.example.lemonade.utils.FormDivider
 import com.example.lemonade.utils.SignWithGoogleButton
+import kotlinx.coroutines.launch
 
 @Composable
 fun Register(navController: NavHostController, viewModel: RegisterViewModel){
@@ -31,9 +34,9 @@ fun Register(navController: NavHostController, viewModel: RegisterViewModel){
         EmailTextField(viewModel)
         PasswordTextField(viewModel)
         ConfirmPasswordTextField(viewModel)
-        RegisterButton(viewModel)
+        RegisterButton(viewModel,navController)
         FormDivider()
-        SignWithGoogleButton (){viewModel.registerWithGoogleButton()}
+      //  SignWithGoogleButton (){viewModel.registerWithGoogleButton()}
 
     }
 

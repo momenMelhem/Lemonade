@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -16,6 +18,7 @@ import androidx.compose.material3.CardElevation
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -24,6 +27,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
@@ -45,6 +50,10 @@ fun NameTextField(viewModel: RegisterViewModel){
             label = { Text(text = "User Name") },
             singleLine = true,
             textStyle = TextStyle(fontWeight = FontWeight.Bold),
+            keyboardOptions = KeyboardOptions.Default.copy(
+                keyboardType = KeyboardType.Text,
+                imeAction = ImeAction.Next
+            ),
             modifier = Modifier
                 .padding(16.dp)
         )
@@ -61,6 +70,10 @@ fun EmailTextField(viewModel: RegisterViewModel){
         label = { Text(text = "Email") },
         singleLine = true,
         textStyle = TextStyle(fontWeight = FontWeight.Bold),
+        keyboardOptions = KeyboardOptions.Default.copy(
+            keyboardType = KeyboardType.Email,
+            imeAction = ImeAction.Next
+        ),
         modifier = Modifier
             .padding(16.dp)
     )
@@ -85,6 +98,10 @@ fun PasswordTextField(viewModel : RegisterViewModel){
                     Icon(painter = painterResource(id = viewModel.iconState.value), contentDescription = "")
                 }
             },
+            keyboardOptions = KeyboardOptions.Default.copy(
+                keyboardType = KeyboardType.Password,
+                imeAction = ImeAction.Next
+            ),
             modifier = Modifier
                 .padding(16.dp)
         )
@@ -107,16 +124,22 @@ fun ConfirmPasswordTextField(viewModel : RegisterViewModel){
                 Icon(painter = painterResource(id = viewModel.iconState.value), contentDescription = "")
             }
         },
+        keyboardOptions = KeyboardOptions.Default.copy(
+            keyboardType = KeyboardType.Password,
+            imeAction = ImeAction.Done
+        ),
         modifier = Modifier
             .padding(16.dp)
     )
 }
 
 @Composable
-fun RegisterButton(viewModel: RegisterViewModel){
+fun RegisterButton(viewModel: RegisterViewModel,navHostController: NavHostController){
     val context = LocalContext.current
+
     Button(
-        onClick = { viewModel.registerButton(context) },
+        onClick = {
+            viewModel.registerButton(context,navHostController) },
         modifier = Modifier
             .padding(4.dp)
     ) {

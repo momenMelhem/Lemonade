@@ -2,6 +2,7 @@ package com.example.lemonade.appBar
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.ui.graphics.vector.ImageVector
 sealed class BottomBarScreens(
@@ -14,10 +15,10 @@ sealed class BottomBarScreens(
             title="Home",
             icon = Icons.Default.Home
         )
-        object Slide : BottomBarScreens(
-        rout = "slide",
-        title="Slide",
-        icon = Icons.Default.PlayArrow
+        object Profile : BottomBarScreens(
+        rout = "Profile",
+        title="Profile",
+        icon = Icons.Default.Person
     )
     object How : BottomBarScreens(
         rout = "how",

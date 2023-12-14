@@ -84,10 +84,14 @@ fun FormDivider(){
     }
 }
 @Composable
-fun SignWithGoogleButton(click:()->Unit){
+fun SignWithGoogleButton(viewModel: LoginViewModel,onClick:()->Unit){
 
     Button(
-        onClick = { click() },
+        onClick = {
+
+            onClick()
+
+        },
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Color.White,
         ),
